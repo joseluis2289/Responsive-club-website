@@ -1,0 +1,728 @@
+:root{
+    --clr-neutral-900: hsl(207,19%,9%);
+    --crl-neutral-100: hsl(0,0%,100%);
+    --crl-accent-400: hsl(142, 90%, 61%);
+    --crl-accent-300: hsl(20.18, 100%, 57.45%);
+    
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    border: 0;
+    background-color:#D7D9C6;
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-family: 'Poppins', sans-serif;
+    
+}
+
+.brand-title{
+    font-size: 1.6rem; 
+    margin: .5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    -webkit-box-shadow: 0 10px 6px -6px rgb(80, 73, 73);
+    -moz-box-shadow:0 10px 6px -6px rgb(114, 110, 110);
+    box-shadow: 0 10px 6px -6px rgb(136, 133, 133);
+    border-radius:10px;
+}
+
+.nav-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+.nav-links li:hover{
+    background-color:#555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+.banner{
+    background-image: url("/Cosmetics\ Discount\ Sale\ Landscape\ Banner.png");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100% 100vh;
+    height: 100vh;
+}
+
+/* discover the city of Leipzig */
+.welcome{
+    text-align: center;
+    height: 30vh;
+    width:auto;
+    margin: auto;
+    padding: 50px;
+    
+}
+.p-discover{
+    text-align: justify;
+    text-justify: inter-word;
+    
+
+  
+}
+.discover-title{
+    display: block;
+    position: relative;
+    cursor: pointer;
+}
+.discover-title::after{
+    content:"";
+    position: absolute;
+    left: 690px;
+    background: var(--crl-accent-400);
+    display: block;
+    border: 0;
+    margin: 0.5rem 0;
+    width:300px;
+    height: 10px;
+    transform: scaleX(0.1); 
+    transition: transform 0.4s ease; 
+    
+}
+
+.discover-title:hover:after,
+.discover-title:active:after{
+    transform: scaleX(1);
+    transform-origin: left;
+    transition: transform 0.5s ease;
+}
+
+
+.grid-container-about{
+    background-color: #ddd;
+    display: grid;
+    grid-template-columns: auto auto;
+    padding: 30px;
+    column-gap: 40px;
+    
+}
+.grid-item-img{
+    margin: 0 0 0 auto;
+    width: 500px;
+    height: 40vh;
+    border-radius:10px;
+    
+}
+.aboutUs-text{
+    width: 600px;
+}
+
+/* about us  */
+
+.aboutUs-title{
+color: #000;
+text-decoration: none;
+border: 0;
+margin: 0.5rem 0;
+line-height: 1.4;
+display: block;
+position: relative;
+}
+
+.aboutUs-title:after{
+    position: absolute;
+    content: "";
+    background: var(--crl-accent-400);
+    display: block;
+    left:0; 
+    bottom:0;
+    line-height: 1.4;
+    width:100%;
+    height: 10px;
+    transform: scaleX(0.1); 
+    transition: transform 0.4s ease; 
+    
+}
+
+.aboutUs-title:hover:after,
+.aboutUs-title:active:after{
+    transform: scaleX(1);
+    transform-origin: left bottom;
+    transition: transform 0.5s ease;
+}
+
+
+
+/* what we offer cards */
+.tittle-what-we-offer{
+    text-align: center;
+}
+
+.card-container{
+    display: flex;
+    justify-content: space-around;
+}
+
+.card{
+    color: var(--crl-neutral-100);
+    background-image: url(./we-offer.jpg);
+    background-size: cover;
+    padding: 12rem 0 0;
+    /* ch is 35 character wide */
+    max-width: 35ch;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: transform 500ms ease;
+
+}
+
+.card:hover{
+    transform: scale(1.05);
+}
+
+
+
+.card-content{
+    /* this variable only exist within the card content */
+    --padding: 1.5rem;
+    padding: var(--padding);
+    /* here im appying some saturation and opacity of the backgroud card in order to king of fade it out */
+    background: linear-gradient(
+        hsl(0 0% 0% / 0),
+        hsl(0 0% 0% / 0.3) 20%,
+        hsl(0 0% 0% / 1)
+    );
+}
+
+.card-title{
+    position: relative;
+    /* max-content it line up the with of the title */
+    width: max-content;
+    
+   
+}
+
+.card-title::after{
+    content:"";
+    position: absolute;
+    height: 4px;
+    /* here I'm moving the green bar to the left in order to animate */
+    left: calc(var(--padding) * -1 );
+    bottom: 0;
+    width: calc(100% + var(--padding));
+    background: var(--crl-accent-400);
+    /* here I'm animating the green bar from left to right */
+    transform-origin: left;
+    transform: scaleX(0);
+    transition: transform 500ms ease;
+}
+
+.card:hover .card-title::after{
+    transform: scaleX(1);
+}
+
+.card-body{
+    color: rgb(255 255 255 / 0.85);
+}
+
+.button{
+    cursor:pointer;
+    display: inline-block;
+    padding: 0.5em 1.3em;
+    text-decoration: none;
+    color: var(--clr-neutral-900);
+    background-color: var(--crl-accent-400);
+    padding: 0.5em 1.25em;
+    border-radius: 0.25em;
+}
+
+
+.button:hover,
+.button:focus {
+    background-color: var(--crl-neutral-100);
+}
+
+
+/* .what-we-offer{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    display: flex;
+    justify-content: space-around;
+}
+.kayak{
+    /* background-image:url("kayak.png"); 
+    height: 40vh;
+    margin: 10px;
+    border-radius:10px;
+    background: #ddd;
+    box-shadow: 0 6px 10px rgba(14, 13, 13, 0.08), 0 0 6px rgba(0, 0, 0, 0.05);
+    cursor: pointer;
+}
+
+
+.kayak:hover{
+    border: rgba(0, 0, 0, 0.05) solid 0;
+    transform: scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.12), 0 4px 8px rgba(0, 0, 0, 0.06);
+    transition: 0.3s;
+} */
+
+/* register */
+.register-title{
+    text-align: center;
+    padding: 20px;
+    font-family:'Poppins', sans-serif;
+}
+#register{
+    
+    background-color:rgba(0, 0, 0, 0.05);
+    width: 600px;
+    font-size: 18px;
+    border-radius:10px;
+    border:1px solid rgba(214, 210, 210, 0.3);
+    box-shadow: 2px 2px 15px;
+    color:rgb(24, 21, 21);
+    margin: 50px auto;
+    text-align: center;
+    padding: 20px;
+
+}
+label{
+    font-family:'Poppins', sans-serif;
+    font-size: 18px;  
+}
+input#name{
+    width: 300px;
+    border: 1px solid #ddd; 
+    border-radius: 3px;
+    outline: 0;
+    padding: 7px;
+    background-color: #fff;
+    box-shadow: inset 1px 1px 5px
+    rgba(0,0,0,0.3);
+}
+
+
+input#submit{
+    width: 200px;
+    padding: 7px;
+    font-size: 16px;
+    font-family: sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius:3px;
+    background-color:rgba(250, 100, 0, 0.8);
+    color:black;
+    cursor:pointer;
+    border:1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3);
+    margin-bottom: 20px;
+}
+
+/* label,span,h2{
+     text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.3); 
+} */
+
+/* footer */
+.footer{
+    width: 100%;
+    height: 40vh;
+    background-color:#000;
+    color:whitesmoke;
+}
+.footer-sections{
+    display: flex;
+    justify-content: space-around;
+   
+}
+.company-title{
+    color:var(--crl-accent-300);
+}
+.company ul{
+    margin: 0;
+    padding: 0; 
+}
+.company li{
+    list-style: none;
+}
+.company li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+.help-title{
+    color:var(--crl-accent-300);
+}
+.get-help ul{
+    margin: 0;
+    padding: 0; 
+}
+
+.get-help li{
+    list-style: none;
+}
+.get-help li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.shop-title{
+    color: var(--crl-accent-300);
+}
+
+.online-shop ul{
+    margin: 0;
+    padding: 0; 
+}
+.online-shop li{
+    list-style: none;
+}
+
+.online-shop li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+
+.followUs-title{
+    color:var(--crl-accent-300);
+}
+.follow-us-list::before{
+    font-family: "Font Awesome 5 free";
+    content: "\e055";
+    font-weight: 900;
+     display: inline-block;
+    font-style: normal;
+    font-size: 2em;
+    margin-right: 0.5em;
+    text-rendering: auto;
+    -webkit-font-smoothing:antialiased; 
+
+}
+/* @media (max-width:600px){
+
+    .toggle-button{
+        display: flex;  
+    }
+
+    .nav-links{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .nav-links li {
+        text-align: center;
+    }
+    .nav-links li a {
+        padding: .5rem 1rem;
+    }
+    .nav-links.active{
+        display: flex;
+    
+    }
+} */
+
+ @media(min-width: 320px) and (max-width: 600px){
+
+   .toggle-button{
+        display: flex;  
+    }
+
+    .nav-links{
+        display: none;
+        width: 100%;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+    }
+
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .nav-links li {
+        text-align: center;
+    }
+    .nav-links li a {
+        padding: .5rem 1rem;
+    }
+    .nav-links.active{
+        display: flex;
+    
+    }
+
+
+    .banner{
+        background-image: url("/Cosmetics\ Discount\ Sale\ Landscape\ Banner.png");
+        background-repeat: no-repeat;
+        background-position: cover;
+        background-size: 100% 100vh;
+        height: 80vh;
+        width: 100%; 
+    }
+    .discover-title::after{
+        left: 20px; 
+    }
+   
+    .p-discover{
+        text-align: justify;
+        text-justify: inter-word;
+        padding: 20px;
+      
+    }
+    .grid-container-about{
+        
+         margin: 160px 0 0px 0px; 
+        background-color: #ddd;
+        display: grid;
+        grid-template-columns: 1fr;
+       
+    }
+    .grid-item-img{
+         width:auto;
+         margin: 40px auto 0 0;
+    }
+   
+    .aboutUs-title{
+        padding: 10px;
+    }
+    .aboutUs-text{
+        text-align: justify;
+        text-justify: inter-word;
+        width: 370px;
+        padding: 10px;
+        
+    }
+    .card-container{
+        display: flex;
+        flex-direction: column;
+        
+        
+    }
+    .card{
+        margin: 20px auto;
+    }
+
+
+    #register{
+        width: 300px;
+    }
+ 
+    input#name{
+        width: 200px;
+    }
+    .footer{
+        width: 100%;
+        height: 160vh;
+        background-color:#000;
+        color:var(--clr-neutral-900);
+    }
+    .footer-sections{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+     
+       
+    }
+
+
+}
+
+
+
+@media (min-width: 601px) and (max-width: 767px){
+    .navbar{
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-around;
+        align-content: center;
+    }
+    .banner{
+        background-image: url("/Cosmetics\ Discount\ Sale\ Landscape\ Banner.png");
+        background-repeat: no-repeat;
+        background-position:cover;
+        background-size: 100% 100vh;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .discover-title::after{
+        left: 260px; 
+        margin: 0 0 30px;
+        
+    }
+    .discover-title{
+        width: 800px;
+        text-align: center;
+    }
+    .p-discover{
+        text-align: justify;
+        text-justify: inter-word;
+        width: 700px;
+        padding: 0.7em 5em;
+        margin:20px 0 0 60px;
+        font-size: 20px;
+       
+    }
+    .grid-container-about{
+        width: 800px;
+        margin: 150px 0;
+        background-color: #ddd;
+        display: grid;
+        grid-template-columns: 1fr;
+        padding: 90px;
+    }
+    .aboutUs-text{
+        text-align: justify;
+        text-justify: inter-word;
+        width: 550px;
+    }
+    .card-container{
+        display: flex;
+        flex-direction: column;    
+    }
+   .card{
+  font-size: larger;
+   margin: 0 0 30px 100px;
+   
+   }
+   #register{
+   font-size: 30px;
+   margin:10px auto 25px 70px;
+   
+}
+
+input#name{
+    width: 300px;
+    
+}
+label{
+    font-family:'Poppins', sans-serif;
+   
+}
+
+.footer{
+    width: 100%;
+    height: 100vh;
+    background-color:#000;
+    color:var(--clr-neutral-900);
+}
+.footer-sections{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center; 
+}
+}
+
+@media (min-width: 768px) and (max-width: 1024px){
+
+    .discover-title::after{
+        left: 250px; 
+        margin: 0 0 30px;
+        
+    }
+    .discover-title{
+        width: 800px;
+        text-align: center;
+    }
+    .p-discover{
+        text-align: justify;
+        text-justify: inter-word;
+        width: 790px;
+        padding: 0.7em 5em;
+        margin:20px 0 0 10px;
+        font-size: 20px;
+       
+    }
+   
+    .grid-container-about{
+        
+       
+        background-color: #ddd;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        
+    }
+.grid-item-text{
+    margin: 0 0 0 30px;
+}
+
+.card-container{
+    display: flex;
+    
+    justify-content: space-between;
+      
+}
+.card{
+    margin: 0 10px 0px 30px;
+}
+.footer{
+    width: 100%;
+    height: 100vh;
+    background-color:#000;
+    color:var(--clr-neutral-900);
+}
+.footer-sections{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center; 
+}
+
+}

@@ -1,0 +1,103 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    margin: 0;
+    border: 0;
+    background-image: url("/Cosmetics\ Discount\ Sale\ Landscape\ Banner.png");
+    background-repeat: no-repeat;
+    background-position: cover;
+    background-size: 100% 55vh;
+    width: 100%;
+    
+}
+
+.navbar{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    font-family: 'Poppins', san;
+    
+}
+
+.brand-title{
+    font-size: 1.6rem; 
+    margin: .5rem;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    -webkit-box-shadow: 0 10px 6px -6px rgb(80, 73, 73);
+    -moz-box-shadow:0 10px 6px -6px rgb(114, 110, 110);
+    box-shadow: 0 10px 6px -6px rgb(136, 133, 133);
+    border-radius:10px;
+}
+
+.nav-links ul {
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+.nav-links li {
+    list-style: none;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    display: block;
+}
+.nav-links li:hover{
+    background-color:#555;
+}
+
+.toggle-button {
+    position: absolute;
+    top: .75rem;
+    right: 1rem;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 22px;
+}
+
+.toggle-button .bar {
+    height: 3px;
+    width: 100%;
+    background-color: white;
+    border-radius: 10px;
+}
+
+
+
+@media (max-width: 500px){
+    .toggle-button{
+        display: flex;  
+    }
+    .nav-links{
+          display: none;
+         width: 100%;
+    }
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .nav-links ul {
+        width: 100%;
+        flex-direction: column;
+        
+    }
+    .nav-links li {
+        text-align: center;
+    }
+    .nav-links li a {
+        padding: .5rem 1rem;
+    }
+    .nav-links.active{
+        display: flex;
+
+    }
+}
