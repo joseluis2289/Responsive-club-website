@@ -497,7 +497,11 @@ input#submit:focus {
     background-image: url("./Images/Cosmetics\ Discount\ Sale\ Landscape\ Banner\ mobile.png");
     background-repeat: no-repeat;
     background-position: cover;
-    background-size: 100% 100vh;
+    background-size: 100% 80vh;
+     
+    
+    
+    
   }
   .discover-title::after {
     left: 20px;

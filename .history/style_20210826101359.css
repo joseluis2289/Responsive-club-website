@@ -498,6 +498,10 @@ input#submit:focus {
     background-repeat: no-repeat;
     background-position: cover;
     background-size: 100% 100vh;
+    /* height: 80vh; */
+    width: 100%;
+    margin: auto;
+    
   }
   .discover-title::after {
     left: 20px;
